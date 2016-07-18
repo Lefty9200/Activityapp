@@ -1,7 +1,7 @@
 
 angular.module('joinedModule', [])
   // create the controller and inject Angular's $scope
-  .controller('joinedController', function($scope, Database) {
+  .controller('joinedController', function($scope, Database, Storage) {
 
     $scope.joinedActivities = [];
     $scope.get = Database.getGoingActivities(function(data) {
@@ -9,7 +9,7 @@ angular.module('joinedModule', [])
 
       for (var activ in data) {
         // if activity has username or created is username 
-        if (data[activ].going.includes('is') || data[activ].creator === 'is') {
+        if (data[activ].going.includes(Storage.currentUser) || data[activ].creator === Storage.currentUser) {
           result.push(data[activ]);          
         }
       }
