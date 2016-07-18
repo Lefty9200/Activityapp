@@ -3,7 +3,8 @@
 <div class="jumbotron text-center">
   <div class="container">
     <h2>Joined Activities</h2>
-    <div ng-repeat="activity in joinedActivities">
+
+    <div class="joinedEvt teal lighten-2" ng-repeat="activity in joinedActivities">
       <h3>{{ activity.name }}</h3>
       <p>Date: {{ activity.date }}</p>
       <p>Time: {{ activity.time }}</p>
@@ -11,5 +12,6 @@
       <p>Creator: {{ activity.creator }}</p>
       <p>Comments:</br>{{ activity.comments }}</p>   
     </div>
+
   </div> <!-- /container -->
 </div>
