@@ -50,7 +50,9 @@ angular.module("pendingModule", [])
       console.log(data);
 
     for (let active in data) {
-      result.push(data[active]);
+      let currChunk = data[active];
+      currChunk["key"] = active;
+      result.push(currChunk);
     }
 
     $scope.joinedEvents = result;
