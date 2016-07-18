@@ -82,7 +82,8 @@ angular.module("pendingModule", [])
   $scope.keepEvent = function(data) {
       console.log(data);
       console.log("Storage.currentUserActivities: ", Storage.currentUserActivities);
-    Storage.currentUserActivities.push(data);
+    // Storage.currentUserActivities.push(data);
+    Database.joinActivity(data["key"]);
     joined.push($scope.nextEvent(data));
   };
 
