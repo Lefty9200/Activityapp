@@ -1,10 +1,5 @@
 angular.module('dataServiceModule', [])
   .factory('Database', function(Storage) {
-    var login = function() {
-      return true;
-    };
-
-    var logout;
 
     var getGoingActivities = function(cb) {
       firebase.database().ref('activities').once('value').then(function(snapshot) {
@@ -47,10 +42,13 @@ angular.module('dataServiceModule', [])
     };
 
   })
+
+
   .factory('Storage', function() {
     var currentUser = null;
     var login = function(username) {
-      currentUser = username;
+      this.currentUser = username;
+
     };
     var logout = function() {
       currentUser = null;

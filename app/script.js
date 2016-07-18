@@ -50,10 +50,13 @@ angular.module('mainModule', ['ngRoute', 'loginModule', 'pendingModule', 'joined
   })
 
  var checkLogin = function($location, Storage) {
-      if (Storage.currentUser !== null) {
-        return true;
-      }
-      else {
-        $location.path("/");
-      }
+  // return true;
+    if (Storage.currentUser !== null) {
+      console.log(Storage.currentUser);
+      return true;
+    }
+    else {
+      console.log(Storage.currentUser);
+      $location.path("/");
+    }
   }
