@@ -55,6 +55,15 @@ angular.module("pendingModule", [])
       result.push(data[active]);
     }
 
+
+  $scope.joinedEvents = [];
+  $scope.get = Database.getUnseenActivities(function(data) {
+    let result = [];
+
+    for (let active in data) {
+      result.push(data[active]);
+    }
+
     $scope.joinedEvents = result;
     $scope.$digest();
       console.log($scope.joinedEvents);
