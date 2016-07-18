@@ -8,3 +8,9 @@ body {
   position: relative;
   top: 100px;
 }
+
+.joinedEvt {
+  position: relative;
+  display: inline;
+  width: 25%;
+}
