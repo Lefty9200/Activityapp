@@ -23,20 +23,40 @@ angular.module('mainModule', ['ngRoute', 'loginModule', 'pendingModule', 'joined
     // route for the about page
     .when('/pending', {
       templateUrl : 'app/pages/pending.html',
-      controller  : 'pendingController'
+      controller  : 'pendingController',
+      resolve: {
+                factory : checkLogin
+            }
     })
 
     // route for the contact page
     .when('/joined', {
       templateUrl : 'app/pages/joined.html',
-      controller  : 'joinedController'
+      controller  : 'joinedController',
+      resolve: {
+                factory: checkLogin
+            }
     })
 
     // route for the contact page
     .when('/create', {
       templateUrl : 'app/pages/create.html',
-      controller  : 'createController'
+      controller  : 'createController',
+      resolve: {
+                factory: checkLogin
+            }
     });
 
   })
-  
+
+ var checkLogin = function($location, Storage) {
+  // return true;
+    if (Storage.currentUser !== null) {
+      console.log(Storage.currentUser);
+      return true;
+    }
+    else {
+      console.log(Storage.currentUser);
+      $location.path("/");
+    }
+  }
