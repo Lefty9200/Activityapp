@@ -56,8 +56,17 @@ angular.module("pendingModule", [])
 
     for (let active in data) {
       let currChunk = data[active];
-      currChunk["key"] = active;
-      result.push(currChunk);
+      let alreadySeenUsers = currChunk.seen;
+      let flag = true;
+      for (var key in alreadySeenUsers) {
+        if (key.value === Storage.currentUser) {
+          flag = false;
+        }
+      } 
+      if (flag) {  
+        currChunk["key"] = active;
+        result.push(currChunk);
+      }
     }
 
     $scope.joinedEvents = result;
