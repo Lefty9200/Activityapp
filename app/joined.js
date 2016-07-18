@@ -8,7 +8,10 @@ angular.module('joinedModule', [])
       var result = [];
 
       for (var activ in data) {
-        result.push(data[activ]);
+        // if activity has username or created is username 
+        if (data[activ].going.includes('is') || data[activ].creator === 'is') {
+          result.push(data[activ]);          
+        }
       }
       $scope.joinedActivities = result;
       $scope.$digest();
