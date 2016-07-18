@@ -47,6 +47,31 @@ angular.module("pendingModule", [])
   $scope.nextEvent = function(data) {
       console.log(data);
 
+  $scope.joinedEvents = [];
+  $scope.get = Database.getUnseenActivities(function(data) {
+    let result = [];
+
+    for (let active in data) {
+      result.push(data[active]);
+    }
+
+
+  $scope.joinedEvents = [];
+  $scope.get = Database.getUnseenActivities(function(data) {
+    let result = [];
+
+    for (let active in data) {
+      result.push(data[active]);
+    }
+
+    $scope.joinedEvents = result;
+    $scope.$digest();
+      console.log($scope.joinedEvents);
+  });
+
+
+  $scope.nextEvent = function(data) {
+      console.log(data);
     return $scope.evt = {
       date: data.date,
       time: data.time,
@@ -61,7 +86,6 @@ angular.module("pendingModule", [])
       console.log(data);
 
     joined.push($scope.nextEvent(data));
-    // $scope.nextEvent();
   };
 
 
@@ -70,5 +94,8 @@ angular.module("pendingModule", [])
 
     $scope.nextEvent(data.shift());
   };
+
+
+  
 
 });

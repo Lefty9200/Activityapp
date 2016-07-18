@@ -2,13 +2,13 @@
 <link href="app/pages/pending.css" rel="stylesheet">
 
 <div class="jumbotron text-center">
-  <div class="container" ng-init="nextEvent(dummyData.shift())">
+  <div class="container" ng-init="nextEvent(joinedEvents.shift())">
     <h2>You have a new request!</h2>
     <div id="pendingActivity">
       <h3>{{ evt.name }}</h3>
       
       <img id="activityPicture" ng-src="{{ evt.imageLink }}">
-      <div id="specifics" class="card-panel teal lighten-2" ng-show="dummyData.length > 0">
+      <div id="specifics" class="card-panel teal lighten-2" ng-show="joinedEvents.length > 0">
         <p><b>Date:</b><pre> {{ evt.date }} </pre></p>
         <p><b>Time:</b><pre> {{ evt.time }} </pre></p>
         <p><b>Going:</b><pre> {{ evt.going }} </pre></p>
@@ -19,13 +19,13 @@
       </div> 
 
       
-      <div id="noEventsLeft" ng-show="dummyData.length === 0">
+      <div id="noEventsLeft" ng-show="joinedEvents.length === 0">
         <h6 >No events at the moment :(</h6>
       </div>
 
       <div> 
-        <button type="button" class="btn btn-lg" aria-label="Left Align" ng-click="discardEvent(dummyData)">Decline</button>
-        <button type="button" class="btn btn-lg" aria-label="Right Align" ng-click="keepEvent(dummyData.shift())">Accept</button>
+        <button type="button" class="btn btn-lg" aria-label="Left Align" ng-click="nextEvent(joinedEvents.shift())">Decline</button>
+        <button type="button" class="btn btn-lg" aria-label="Right Align" ng-click="keepEvent(joinedEvents.shift())">Accept</button>
       </div>
       
     </div>
