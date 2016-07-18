@@ -56,6 +56,7 @@ angular.module('dataServiceModule', [])
       currentUser = null;
     };
     var currentUserActivities = [];
+    
 
     return {
       login : login,
