@@ -60,7 +60,7 @@ nav.navbar.navbar-default {
 }
 
 #noEventsLeft {
-  font: 200 36px/40px "PT Sans", "Open Sans", Helvetica, sans-serif;
+  font: 200 36px/80px "PT Sans", "Open Sans", Helvetica, sans-serif;
   color: #696969;
   text-align: center;
 }

@@ -44,28 +44,22 @@ angular.module("pendingModule", [])
   ];
 
 
-  $scope.activity = Database.getUnseenActivities(function(data) {
-    // $scope.activities = data;
-    return data;
+  $scope.joinedEvents = [];
+  $scope.get = Database.getUnseenActivities(function(data) {
+    let result = [];
+
+    for (let active in data) {
+      result.push(data[active]);
+    }
+
+    $scope.joinedEvents = result;
+    $scope.$digest();
+      console.log($scope.joinedEvents);
   });
 
 
   $scope.nextEvent = function(data) {
       console.log(data);
-
-  $scope.SS = [];
-  $scope.activity = Database.getUnseenActivities(function(data) {
-    console.log(data);
-    $scope.SS.push(data);
-  });
-
-  console.log($scope.SS);
-
-
-
-
-
-  $scope.nextEvent = function(data) {
     return $scope.evt = {
       date: data.date,
       time: data.time,
@@ -80,7 +74,6 @@ angular.module("pendingModule", [])
       console.log(data);
 
     joined.push($scope.nextEvent(data));
-    // $scope.nextEvent();
   };
 
 
@@ -89,5 +82,8 @@ angular.module("pendingModule", [])
 
     $scope.nextEvent(data.shift());
   };
+
+
+  
 
 });

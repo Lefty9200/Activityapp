@@ -5,33 +5,33 @@
   <form>
     <fieldset class="form-group teal lighten-2">
     <h2>Create a new Activity </h2>
+        <input id ="name" class="form-control" type="text" ng-model="user.name" name="uName" required />
         <label for="name">Name</label>
-        <input id ="name" class="form-control" type="text" ng-model="user.name" name="uName" required=""/>
     </fieldset>
 
     <fieldset class="form-group teal lighten-2">
+        <input type="text"  class="form-control" id ="name" ng-model="user.date" name="uDate" required />
         <label for="name">Date</label>
-        <input type="text"  class="form-control" id ="name" ng-model="user.date" name="uDate" required="" />
     </fieldset>
 
     <fieldset class="form-group teal lighten-2">
+        <input type="text" class="form-control" id ="name"ng-model="user.time" name="uTime" required />
         <label for="name">Time</label>
-        <input type="text" class="form-control" id ="name"ng-model="user.time" name="uTime" required="" />
     </fieldset>
 
     <fieldset class="form-group teal lighten-2">
+        <input type="text" class="form-control" id ="name" ng-model="user.going" name="uGoing" required />
         <label for="name">Going</label>
-        <input type="text" class="form-control" id ="name" ng-model="user.going" name="uGoing" required="" />
     </fieldset>
 
     <fieldset class="form-group teal lighten-2">
+        <input type="text" class="form-control" id ="name" ng-model="user.creator" name="uCreator" required />
         <label for="name">Creator</label>
-        <input type="text" class="form-control" id ="name" ng-model="user.creator" name="uCreator" required="" />
     </fieldset>
 
     <fieldset class="form-group teal lighten-2">
+        <input type="text" class="form-control" id ="name" ng-model="user.comments" name="uComments" required />
         <label for="name">Comments</label>
-        <input type="text" class="form-control" id ="name" ng-model="user.comments" name="uComments" required="" />
     </fieldset>
 
     <button type="submit" class="btn btn-lg" ng-click="onSubmit(user)" value="Save">Save</button>
