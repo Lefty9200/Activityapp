@@ -13,30 +13,35 @@ angular.module("pendingModule", [])
     {
       date: new Date(),
       time: "10:30",
+      location: '2540 Evergreen Dr. San Francisco' ,
       going: "Josh\'s Mom",
       creator: "Jigglypuff (a.k.a., Jiggling Josh)",
       comments: "Bears, Beets, Battlestar Galactica"
     }, {
       date: new Date("October 13, 2014 11:13:00"),
       time: "12:47",
+      location: '2540 Evergreen Dr. San Francisco' ,
       going: "Ben\'s Mom",
       creator: "Belligerent Benjamin",
       comments: "It\'s all about the benjamins."
     }, {
       date: new Date("October 13, 2014 11:13:00"),
       time: "08:55",
+      location: '2540 Evergreen Dr. San Francisco' ,
       going: "Rene\'s Mom",
       creator: "Rambunctious Rene",
       comments: "Relax... take it eeassssyyyy."
     }, {
       date: new Date("October 13, 2014 11:13:00"),
       time: "21:13",
+      location: '2540 Evergreen Dr. San Francisco' ,
       going: "Nick\'s Mom",
       creator: "Nimble Nick",
       comments: "Troloolololllolloolool olooloo."
     }, {
       date: new Date("October 13, 2014 11:13:00"),
       time: "00:00",
+      location: '2540 Evergreen Dr. San Francisco' ,
       going: "Not Oliver\'s Mom",
       creator: "Oscillating Oliver",
       comments: "Ballin\'s not a hobby, it\'s my occupation."
@@ -66,6 +71,7 @@ angular.module("pendingModule", [])
     return $scope.evt = {
       date: data.date,
       time: data.time,
+      location: data.location,
       going: data.going,
       creator: data.creator,
       comments: data.comments
