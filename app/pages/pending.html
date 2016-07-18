@@ -1,20 +1,23 @@
 <!-- pending.html -->
 <link href="app/pages/pending.css" rel="stylesheet">
+
 <div class="jumbotron text-center">
-  <div class="container">
-    <h2>You have new Request!</h2>
+  <div class="container" ng-init="next(dummyData.shift())">
+    <h2>You have a new request!</h2>
     <div id="pendingActivity">
-      <h3>{{ activity.name }}</h3>
-      <img id="activityPicture" ng-src="{{ activity.imageLink}}">
+      <h3>{{ evt.name }}</h3>
+      <img id="activityPicture" ng-src="{{ evt.imageLink }}">
       <div id="specifics">
-        <p>Date: {{ activity.date }}</p>
-        <p>Time: {{ activity.time }}</p>
-        <p>Going: {{ activity.going }}</p>
-        <p>Creator: {{ activity.creator }}</p>
-        <p>Comments:</br>{{ activity.Comments }}</p>       
+        <p><b>Date:</b> {{ evt.date }}</p>
+        <p><b>Time:</b> {{ evt.time }}</p>
+        <p><b>Going:</b> {{ evt.going }}</p>
+        <p><b>Creator:</b> {{ evt.creator }}</p>
+        <p><b>Comments:</b>
+          </br>{{ evt.comments }}
+        </p>       
       </div> 
-      <button type="button" class="btn btn-lg" aria-label="Left Align">Decline</button>
-      <button type="button" class="btn btn-lg" aria-label="Right Align">Accept</button>
+      <button type="button" class="btn btn-lg" aria-label="Left Align" ng-click="discardEvent(dummyData)">Decline</button>
+      <button type="button" class="btn btn-lg" aria-label="Right Align" ng-click="keepEvent(dummyData[0])">Accept</button>
     </div>
   </div> <!-- /container -->
 </div>
