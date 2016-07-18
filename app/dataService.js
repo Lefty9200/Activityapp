@@ -24,8 +24,11 @@ angular.module('dataServiceModule', [])
     };
 
     var joinActivity = function(currentActivity) {
-      firebase.database().ref('activities/' + currentActivity).push(Storage.currentUser).then(function(snapshot){
-        return true;
+      firebase.database().ref('activities/' + currentActivity + '/going').once('value').then(function(snapshot) {
+        if (snapshot.val().includes(Storage.currentUser) === - 1) {
+          var newGoing = snapshot.val() + Storage.currentUser;
+          firebase.database().ref('activities/' + currentActivity + '/going').set(newGoing);
+        }
       });
     }
     var declineActivity = function() {
