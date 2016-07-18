@@ -31,7 +31,8 @@ fieldset label {
   color: rgba(255, 255, 255, 0.75);
 }
 
-input:focus ~ label {
+input:focus ~ label,
+input:target ~ label {
   animation: moveLabel 1s ease-in-out forwards;
 } 
 
