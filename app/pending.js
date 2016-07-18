@@ -90,8 +90,8 @@ angular.module("pendingModule", [])
 
   $scope.discardEvent = function(data) {
       console.log(data);
-
     $scope.nextEvent(data.shift());
+    Database.declineActivity(data["key"]);
   };
 
 
