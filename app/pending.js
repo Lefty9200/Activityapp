@@ -44,17 +44,9 @@ angular.module("pendingModule", [])
   ];
 
 
+
   $scope.nextEvent = function(data) {
       console.log(data);
-
-  $scope.joinedEvents = [];
-  $scope.get = Database.getUnseenActivities(function(data) {
-    let result = [];
-
-    for (let active in data) {
-      result.push(data[active]);
-    }
-
 
   $scope.joinedEvents = [];
   $scope.get = Database.getUnseenActivities(function(data) {
@@ -67,7 +59,9 @@ angular.module("pendingModule", [])
     $scope.joinedEvents = result;
     $scope.$digest();
       console.log($scope.joinedEvents);
-  });
+    });
+   }
+
 
 
   $scope.nextEvent = function(data) {
