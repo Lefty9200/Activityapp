@@ -27,14 +27,15 @@ fieldset {
 fieldset label {
   position: relative;
   top: -45px;
+  left: -42%;
   font: small-caps 600 24px/24px "PT Sans", "Open Sans", Helvetica, sans-serif;
   color: rgba(255, 255, 255, 0.75);
 }
 
-input:focus ~ label,
+/*input:focus ~ label,
 input:target ~ label {
   animation: moveLabel 1s ease-in-out forwards;
-} 
+} */
 
 fieldset input.form-control {
   text-align: center;
