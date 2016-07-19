@@ -16,7 +16,7 @@ angular.module("pendingModule", [])
       let flag = true;
 
       for (var key in alreadySeenUsers) {
-        if (key.value === Storage.currentUser) {
+        if (alreadySeenUsers[key] === Storage.currentUser) {
           flag = false;
         }
       } 
