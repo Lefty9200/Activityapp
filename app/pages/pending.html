@@ -4,11 +4,9 @@
 <div class="jumbotron text-center">
   <div class="container" ng-init="nextEvent(joinedEvents.shift())">
     <h2>You have a new request!</h2>
-    <div id="pendingActivity">
-      <h3>{{ evt.name }}</h3>
-      
-      <img id="activityPicture" ng-src="{{ evt.imageLink }}">
+    <div id="pendingActivity">      
       <div id="specifics" class="card-panel teal lighten-2" ng-show="joinedEvents.length > 0">
+        <p><b>Name:</b><pre> {{ evt.name }} </pre></p>
         <p><b>Date:</b><pre> {{ evt.date }} </pre></p>
         <p><b>Time:</b><pre> {{ evt.time }} </pre></p>
         <p><b>Location:</b><pre> {{ evt.location }} </pre></p>
