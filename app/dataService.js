@@ -30,11 +30,11 @@ angular.module('dataServiceModule', [])
           firebase.database().ref('activities/' + currentActivity + '/going').set(newGoing);
         }
       });
-      firebase.database().ref('activities/' + currentActivity + '/seen'.push(Storage.currentUser);
+      firebase.database().ref('activities/' + currentActivity + '/seen').push(Storage.currentUser);
     }
     var declineActivity = function() {
       console.log("you're no fun");
-      firebase.database().ref('activities/' + currentActivity + '/seen'.push(Storage.currentUser);
+      firebase.database().ref('activities/' + currentActivity + '/seen').push(Storage.currentUser);
     }
 
     return {
