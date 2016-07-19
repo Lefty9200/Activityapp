@@ -24,11 +24,17 @@ angular.module('dataServiceModule', [])
     };
 
     var joinActivity = function(currentActivity) {
+      console.log(currentActivity);
       firebase.database().ref('activities/' + currentActivity + '/going').once('value').then(function(snapshot) {
-        if (snapshot.val().includes(Storage.currentUser) === -1) {
-          var newGoing = snapshot.val() + ' ' + Storage.currentUser;
+        console.log('inside promise for going', snapshot.val());
+        if (!(snapshot.val().includes(Storage.currentUser))) {
+          var newGoing = snapshot.val() + ', ' + Storage.currentUser;
+          console.log(snapshot.val());
           firebase.database().ref('activities/' + currentActivity + '/going').set(newGoing);
         }
+      })
+      .catch(function(error) {
+        console.log(error)
       });
       firebase.database().ref('activities/' + currentActivity + '/seen').push(Storage.currentUser);
     }

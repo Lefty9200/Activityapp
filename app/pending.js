@@ -59,7 +59,8 @@ angular.module("pendingModule", [])
       let alreadySeenUsers = currChunk.seen;
       let flag = true;
       for (var key in alreadySeenUsers) {
-        if (key.value === Storage.currentUser) {
+        console.log(key, alreadySeenUsers[key]);
+        if (alreadySeenUsers[key] === Storage.currentUser) {
           flag = false;
         }
       } 
@@ -72,11 +73,11 @@ angular.module("pendingModule", [])
     $scope.joinedEvents = result;
     $scope.$digest();
       console.log($scope.joinedEvents);
-    });
+  });
 
 
   $scope.nextEvent = function(data) {
-      console.log(data);
+      // console.log(data);
     return $scope.evt = {
       name: data.name,
       date: data.date,
