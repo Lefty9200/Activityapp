@@ -80,7 +80,7 @@ angular.module("pendingModule", [])
       console.log(data);
 
     $scope.$watch("joinedEvents", function(newVal, oldVal, scope) {
-      scope.$digest();
+      gscope.$digest();
     });
 
     return $scope.evt = {
