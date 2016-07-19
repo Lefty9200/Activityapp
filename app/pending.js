@@ -79,9 +79,9 @@ angular.module("pendingModule", [])
   $scope.nextEvent = function(data) {
       console.log(data);
 
-    $scope.$watch("joinedEvents", function(newVal, oldVal, scope) {
-      gscope.$digest();
-    });
+    // $scope.$watch("joinedEvents", function(newVal, oldVal, scope) {
+    //   scope.$digest();
+    // });
 
     return $scope.evt = {
       date: data.date,
