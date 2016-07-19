@@ -2,7 +2,7 @@
 <link href="app/pages/pending.css" rel="stylesheet">
 
 <div class="jumbotron text-center">
-  <div class="container" ng-init="nextEvent(joinedEvents.shift())">
+  <div class="container" >
     <h2>You have a new request!</h2>
     <div id="pendingActivity">      
       <div id="specifics" class="card-panel teal lighten-2" ng-show="joinedEvents.length > 0">
@@ -23,8 +23,8 @@
       </div>
 
       <div> 
-        <button type="button" class="btn btn-lg" aria-label="Left Align" ng-click="nextEvent(joinedEvents.shift())">Decline</button>
-        <button type="button" class="btn btn-lg" aria-label="Right Align" ng-click="keepEvent(joinedEvents.shift())">Accept</button>
+        <button type="button" class="btn btn-lg" aria-label="Left Align" ng-click="discardEvent(joinedEvents[index + 1])">Decline</button>
+        <button type="button" class="btn btn-lg" aria-label="Right Align" ng-click="keepEvent(joinedEvents[index + 1])">Accept</button>
       </div>
       
     </div>

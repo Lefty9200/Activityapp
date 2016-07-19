@@ -1,6 +1,4 @@
 
-let joined = [];
-
 angular.module("pendingModule", [])
 // Create the controller and inject Angular's $scope:
 .controller("pendingController", function($scope, Database, Storage) {
@@ -27,8 +25,11 @@ angular.module("pendingModule", [])
     }
 
     $scope.joinedEvents = result;
-    $scope.$digest();
+    
       console.log($scope.joinedEvents);
+    $scope.index = 0
+    $scope.nextEvent($scope.joinedEvents[$scope.index]);
+    $scope.$digest();
   });
 
 
@@ -39,7 +40,7 @@ angular.module("pendingModule", [])
     //   scope.$digest();
     // });
 
-    return $scope.evt = {
+    $scope.evt = {
       name: data.name,
       date: data.date,
       time: data.time,
@@ -48,6 +49,7 @@ angular.module("pendingModule", [])
       creator: data.creator,
       comments: data.comments
     };
+    
   };
 
 
@@ -56,13 +58,15 @@ angular.module("pendingModule", [])
       console.log("Storage.currentUserActivities: ", Storage.currentUserActivities);
     // Storage.currentUserActivities.push(data);
     Database.joinActivity(data["key"]);
-    joined.push($scope.nextEvent(data));
+    $scope.index ++;
+    $scope.nextEvent(data);
   };
 
 
   $scope.discardEvent = function(data) {
       console.log(data);
-    $scope.nextEvent(data.shift());
+    $scope.index ++;
+    $scope.nextEvent(data);
     Database.declineActivity(data["key"]);
   };
 
