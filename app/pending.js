@@ -58,6 +58,7 @@ angular.module("pendingModule", [])
       let currChunk = data[active];
       let alreadySeenUsers = currChunk.seen;
       let flag = true;
+
       for (var key in alreadySeenUsers) {
         if (key.value === Storage.currentUser) {
           flag = false;
@@ -72,11 +73,16 @@ angular.module("pendingModule", [])
     $scope.joinedEvents = result;
     $scope.$digest();
       console.log($scope.joinedEvents);
-    });
+  });
 
 
   $scope.nextEvent = function(data) {
-      // console.log(data);
+      console.log(data);
+
+    // $scope.$watch("joinedEvents", function(newVal, oldVal, scope) {
+    //   scope.$digest();
+    // });
+
     return $scope.evt = {
       date: data.date,
       time: data.time,
@@ -103,7 +109,5 @@ angular.module("pendingModule", [])
     Database.declineActivity(data["key"]);
   };
 
-
-  
 
 });

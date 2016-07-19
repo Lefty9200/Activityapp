@@ -4,14 +4,36 @@
   <div class="container">
     <h2>Joined Activities</h2>
 
-    <div class="joinedEvt teal lighten-2" ng-repeat="activity in joinedActivities">
+    <div class="joinedEvt" ng-repeat="activity in joinedActivities">
       <h3>{{ activity.name }}</h3>
-      <p>Date: {{ activity.date }}</p>
-      <p>Time: {{ activity.time }}</p>
-      <p>Location: {{ activity.location }}</p>
-      <p>Going: {{ activity.going }}</p>
-      <p>Creator: {{ activity.creator }}</p>
-      <p>Comments:</br>{{ activity.comments }}</p>   
+      
+      <div class="activityCont card-panel teal lighten-2">
+        <div>
+          <p><b>Date:</b></p>       <p class="rightP">{{ activity.date }}</p>
+        </div>
+
+        <div>
+          <p><b>Time:</b></p>       <p class="rightP">{{ activity.time }}</p>
+        </div>
+        
+        <div>
+          <p><b>Location:</b></p>   <p class="rightP">{{ activity.location }}</p>
+        </div>
+        
+        <div>
+          <p><b>Going:</b></p>      <p class="rightP">{{ activity.going }}</p>
+        </div>
+
+        <div>
+          <p><b>Creator:</b></p>    <p class="rightP">{{ activity.creator }}</p>
+        </div>
+
+        <div>
+          <p><b>Comments:</b></br></p>
+                                    <p class="rightP">{{ activity.comments }}</p>
+        </div>
+
+      </div>
     </div>
 
   </div> <!-- /container -->
